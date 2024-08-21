@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="60 seconds">
+    <contextName>JPANAME</contextName>
+    <property name="log.path" value="./logs"/>
+    <property name="server.name" value="tcb_lollyserver"/>
+    <!--格式化輸出：%d表示日期，%thread表示執行緒名，%-5level：級別從左顯示5個字元寬度%msg：日誌訊息，%n是換行符-->
+    <property name="log.pattern"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"/>
+    <property name="log.file" value="${log.path}/${server.name}.%d{yyyyMMdd}.%i.log.gz"/>
+    <!-- 控制檯輸出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender>
+    <appender name="jsonfileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+            <jsonFormatter
+                    class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+                <prettyPrint>true</prettyPrint>
+            </jsonFormatter>
+            <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
+        </layout>
+    </appender>
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp />
+                <logLevel/>
+                <pattern>
+                    <pattern>
+                       {
+                            "server": "${hostname}",
+                            "application": "${server.name}",
+                            "user_id": ""
+                        }
+                    </pattern>
+                </pattern>
+                <loggerName>
+                    <fieldName>logger</fieldName>
+                </loggerName>
+                <message />
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--日誌檔案輸出的檔名-->
+            <FileNamePattern>${log.file}</FileNamePattern>
+            <!--日誌檔案保留天數-->
+            <!--<MaxHistory>30</MaxHistory> -->
+            <maxFileSize>200MB</maxFileSize>
+        </rollingPolicy>
+        <ImmediateFlush>true</ImmediateFlush>
+    </appender>
+    <appender name="asyncFileAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>5000</queueSize>
+        <discardingThreshold>0</discardingThreshold>
+        <includeCallerData>false</includeCallerData>
+        <appender-ref ref="jsonfileAppender"/>
+    </appender>
+    <!-- 日誌輸出級別 -->
+    <root level="INFO">
+        <appender-ref ref="asyncFileAppender"/>
+        <appender-ref ref="console"/>
+    </root>
+</configuration>

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    authorization:
+      url: jdbc:sqlserver://23001991HUGO\SQLEXPRESS;databaseName=authorization
+      username: sa
+      password: 123456
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver

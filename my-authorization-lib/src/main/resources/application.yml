@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    authorization:
+      url: jdbc:sqlserver://WORKING;databaseName=authorization;integratedSecurity=true;
+      jdbcurl: jdbc:sqlserver://WORKING;databaseName=authorization;integratedSecurity=true;
+      username: sa
+      password: 123456
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
