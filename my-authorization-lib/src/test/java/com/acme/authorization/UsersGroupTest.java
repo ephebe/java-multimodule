@@ -24,12 +24,12 @@ public class UsersGroupTest {
 
     @Test
     public void AddUserGroupToChildsTest() {
-        UsersGroup aaaa = usersGroups.findUsersGroupByName("aaaa");
-        UsersGroup cccc = aaaa.addChild("cccc");
+        UsersGroup aaa = usersGroups.findUsersGroupByName("aaa");
+        UsersGroup ccc =  aaa.addChild("ccc");
 
-        Assert.state(cccc.getParent() == aaaa,"");
-        Assert.state(aaaa.getDescendants().contains(cccc),"");
-        Assert.state(aaaa.getChilds().contains(cccc),"");
+        Assert.state(ccc.getParent().getId().equals(aaa.getId()),"ccc's Parent is not aaa");
+        Assert.state(aaa.getDescendants().stream().anyMatch(s -> s.getDescendantId().equals(ccc.getId())),"aaa's descendants do not have ccc");
+        Assert.state(aaa.getChilds().stream().anyMatch(s -> s.getId().equals(ccc.getId())),"aaa's childs do not have ccc");
     }
 
     @Test

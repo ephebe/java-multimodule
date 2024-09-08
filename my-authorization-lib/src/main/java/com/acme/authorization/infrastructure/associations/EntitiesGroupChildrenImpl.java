@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.UUID;
 
-@Component
 public class EntitiesGroupChildrenImpl implements EntitiesGroup.EntitiesGroupChildren {
     private UUID parentId;
     private EntitiesGroupRepository repository;

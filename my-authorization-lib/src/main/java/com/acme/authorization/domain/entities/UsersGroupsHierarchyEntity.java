@@ -11,9 +11,18 @@ import java.util.UUID;
 @Data
 public class UsersGroupsHierarchyEntity {
     @Id
-    @Column(name = "ParentGroup")
-    private UUID parentGroupId;
+    @Column(name = "AncestorGroup")
+    private UUID ancestorId;
     @Id
-    @Column(name = "ChildGroup")
-    private UUID childGroupId;
+    @Column(name = "DescendantGroup")
+    private UUID descendantId;
+
+    public UsersGroupsHierarchyEntity() {
+
+    }
+
+    public UsersGroupsHierarchyEntity(UUID ancestorId,UUID descendantId) {
+        this.ancestorId = ancestorId;
+        this.descendantId = descendantId;
+    }
 }

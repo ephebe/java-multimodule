@@ -11,8 +11,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface UserRepository extends JpaRepository<UserEntity, UUID> {
-    @Query(nativeQuery = true,value="SELECT FROM USERSGROUPUSERS A INNER JOIN USERS B ON A.UserId = B.Id WHERE A.UserGroupId=:userGroupId")
+    @Query(value="SELECT b FROM UsersGroupUserEntity a INNER JOIN UserEntity b ON a.userId = b.id WHERE a.usersGroupId=?1")
     List<UserEntity> findUsersGroupUsers(UUID usersGroupId);
-
-    User build(UserEntity entity);
 }

@@ -8,12 +8,12 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UsersGroupUser {
     private final UsersGroupUserEntity srcEntity;
-    private final UsersGroupUserItsUser associateUser;
+    private final Users users;
     public interface UsersGroupUserItsUser {
         User get(UUID userId);
     }
 
     public User getUser() {
-        return associateUser.get(srcEntity.getUserId());
+        return users.findById(srcEntity.getUserId());
     }
 }

@@ -12,5 +12,4 @@ import java.util.stream.Collectors;
 
 public interface UsersGroupUserRepository extends JpaRepository<UsersGroupUserEntity, UsersGroupUserId> {
     List<UsersGroupUserEntity> findByUsersGroupId(UUID usersGroupId);
-    UsersGroupUser build(UsersGroupUserEntity entity);
 }

@@ -11,5 +11,4 @@ import java.util.UUID;
 public interface UsersGroupRepository extends JpaRepository<UsersGroupEntity, UUID> {
     Optional<UsersGroupEntity> findOneByName(String name);
     List<UsersGroupEntity> findByParentId(UUID parentId);
-    UsersGroup build(UsersGroupEntity entity);
 }
