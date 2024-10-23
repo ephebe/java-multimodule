@@ -1,6 +1,5 @@
 package com.acme.authorization.infrastructure.repository;
 
-import com.acme.authorization.domain.UsersGroup;
 import com.acme.authorization.domain.entities.UsersGroupEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 

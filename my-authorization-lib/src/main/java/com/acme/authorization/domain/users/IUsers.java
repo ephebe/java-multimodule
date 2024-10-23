@@ -1,8 +1,8 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.users;
 
 import java.util.UUID;
 
-public interface Users {
+public interface IUsers {
     User findByName(String name);
 
     User findById(UUID userId);

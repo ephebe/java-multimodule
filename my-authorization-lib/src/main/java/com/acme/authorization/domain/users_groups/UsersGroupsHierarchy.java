@@ -1,4 +1,4 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.users_groups;
 
 import com.acme.authorization.domain.entities.UsersGroupsHierarchyEntity;
 import lombok.RequiredArgsConstructor;

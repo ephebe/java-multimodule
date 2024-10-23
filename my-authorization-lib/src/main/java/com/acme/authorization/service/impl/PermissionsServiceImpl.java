@@ -1,7 +1,7 @@
 package com.acme.authorization.service.impl;
 
 import com.acme.authorization.domain.Permission;
-import com.acme.authorization.domain.User;
+import com.acme.authorization.domain.users.User;
 import com.acme.authorization.service.PermissionsService;
 
 import java.util.List;

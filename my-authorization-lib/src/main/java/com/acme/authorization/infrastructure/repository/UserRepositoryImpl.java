@@ -1,6 +1,6 @@
 //package com.acme.authorization.infrastructure.repository;
 //
-//import com.acme.authorization.domain.User;
+//import com.acme.authorization.domain.users.User;
 //import com.acme.authorization.domain.entities.UserEntity;
 //import lombok.RequiredArgsConstructor;
 //

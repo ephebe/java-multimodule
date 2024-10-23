@@ -1,6 +1,6 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.entities_groups;
 
-public interface EntitiesGroups {
+public interface IEntitiesGroups {
     EntitiesGroup add(String entitiesGroupName);
 
     EntitiesGroup findEntitiesGroupByName(String entitiesGroupName);

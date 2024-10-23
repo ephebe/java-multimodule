@@ -1,21 +1,24 @@
 package com.acme.authorization;
 
 import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.users.IUsers;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.IUsersGroups;
+import com.acme.authorization.domain.users_groups.UsersGroup;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 @SpringBootTest
 public class ScenariosTests {
     @Autowired
-    private UsersGroups usersGroups;
+    private IUsersGroups usersGroups;
 //    @Autowired
 //    private EntitiesGroups entitiesGroups;
 //    @Autowired
 //    private Operations operations;
     @Autowired
-    private Users users;
+    private IUsers users;
 
     private User user;
     private Feature feature;

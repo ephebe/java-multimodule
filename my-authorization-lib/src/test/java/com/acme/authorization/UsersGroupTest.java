@@ -1,6 +1,10 @@
 package com.acme.authorization;
 
-import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.users.IUsers;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.IUsersGroups;
+import com.acme.authorization.domain.users_groups.UsersGroup;
+import com.acme.authorization.domain.users_groups.UsersGroupsHierarchy;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,9 +15,9 @@ import java.util.List;
 @SpringBootTest
 public class UsersGroupTest {
     @Autowired
-    private UsersGroups usersGroups;
+    private IUsersGroups usersGroups;
     @Autowired
-    private Users users;
+    private IUsers users;
 
     @Test
     public void CreateUsersGroupTest() {

@@ -1,5 +1,6 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.users_groups;
 
+import com.acme.authorization.domain.users.User;
 import com.acme.authorization.domain.entities.UsersGroupEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,7 @@ import java.util.UUID;
 public class UsersGroup {
     @Getter
     private final UsersGroupEntity srcEntity;
-    private final UsersGroups usersGroups;
+    private final IUsersGroups usersGroups;
     private final UsersGroupUsers users;
     private final UsersGroupHierarchies hierarchies;
     private final UsersGroupPermissions permissions;

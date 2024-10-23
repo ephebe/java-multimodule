@@ -2,8 +2,8 @@ package com.acme.authorization.infrastructure.associations;
 
 import com.acme.authorization.domain.Permission;
 import com.acme.authorization.domain.Permissions;
-import com.acme.authorization.domain.User;
-import com.acme.authorization.domain.UsersGroup;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.UsersGroup;
 
 import java.util.List;
 

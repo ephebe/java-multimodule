@@ -1,5 +1,6 @@
 package com.acme.authorization.domain;
 
+import com.acme.authorization.domain.entities_groups.EntitiesGroup;
 import com.acme.authorization.domain.entities.FeatureEntity;
 
 public class Feature {

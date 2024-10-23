@@ -1,4 +1,4 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.entities_groups;
 
 import com.acme.authorization.domain.entities.EntitiesGroupEntity;
 import lombok.Data;

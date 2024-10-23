@@ -1,5 +1,9 @@
 package com.acme.authorization.domain;
 
+import com.acme.authorization.domain.entities_groups.EntitiesGroup;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.UsersGroup;
+
 public class FluentPermissionBuilder implements ForPermissionBuilder,
         OnPermissionBuilder,LevelPermissionBuilder,PermissionBuilder {
     @Override

@@ -1,6 +1,9 @@
 package com.acme.authorization;
 
 import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.entities_groups.EntitiesGroup;
+import com.acme.authorization.domain.entities_groups.IEntitiesGroups;
+import com.acme.authorization.domain.users.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,7 +12,7 @@ import org.springframework.util.Assert;
 @SpringBootTest
 class AuthorizationServiceTests {
     @Autowired
-    private EntitiesGroups entitiesGroups;
+    private IEntitiesGroups entitiesGroups;
     private User user;
     private Feature feature;
 

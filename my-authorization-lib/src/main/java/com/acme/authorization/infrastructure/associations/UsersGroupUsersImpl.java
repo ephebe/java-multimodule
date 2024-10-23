@@ -1,9 +1,8 @@
 package com.acme.authorization.infrastructure.associations;
 
-import com.acme.authorization.domain.User;
-import com.acme.authorization.domain.UsersGroup;
-import com.acme.authorization.domain.UsersGroupUser;
-import com.acme.authorization.domain.entities.UsersGroupEntity;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.UsersGroup;
+import com.acme.authorization.domain.users_groups.UsersGroupUser;
 import com.acme.authorization.domain.entities.UsersGroupUserEntity;
 import com.acme.authorization.infrastructure.repository.UsersGroupUserRepository;
 import lombok.RequiredArgsConstructor;

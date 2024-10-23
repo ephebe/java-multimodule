@@ -1,7 +1,7 @@
 //package com.acme.authorization.infrastructure.associations;
 //
-//import com.acme.authorization.domain.User;
-//import com.acme.authorization.domain.UsersGroupUser;
+//import com.acme.authorization.domain.users.User;
+//import com.acme.authorization.domain.UsersGroup.UsersGroupUser;
 //import com.acme.authorization.domain.UsersGroups;
 //import com.acme.authorization.domain.entities.UserEntity;
 //import com.acme.authorization.infrastructure.repository.UserRepository;

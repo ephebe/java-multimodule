@@ -1,6 +1,9 @@
 package com.acme.authorization;
 
 import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.IUsersGroups;
+import com.acme.authorization.domain.users_groups.UsersGroup;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
@@ -10,7 +13,7 @@ import java.util.List;
 @SpringBootTest
 public class PermissionsServiceTests {
 
-    private UsersGroups usersGroups;
+    private IUsersGroups usersGroups;
 
     private Permissions permissions;
     private User user;

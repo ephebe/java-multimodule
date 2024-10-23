@@ -1,5 +1,8 @@
 package com.acme.authorization.domain;
 
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.UsersGroup;
+
 import java.util.List;
 
 public interface Permissions {

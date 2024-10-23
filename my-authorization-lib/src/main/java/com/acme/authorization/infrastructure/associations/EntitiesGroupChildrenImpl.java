@@ -1,8 +1,7 @@
 package com.acme.authorization.infrastructure.associations;
 
-import com.acme.authorization.domain.EntitiesGroup;
+import com.acme.authorization.domain.entities_groups.EntitiesGroup;
 import com.acme.authorization.infrastructure.repository.EntitiesGroupRepository;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.UUID;

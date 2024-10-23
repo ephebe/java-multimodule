@@ -1,11 +1,10 @@
 package com.acme.authorization.infrastructure.associations;
 
-import com.acme.authorization.domain.UsersGroup;
-import com.acme.authorization.domain.UsersGroups;
+import com.acme.authorization.domain.users_groups.IUsersGroups;
+import com.acme.authorization.domain.users_groups.UsersGroup;
 import com.acme.authorization.domain.entities.UsersGroupEntity;
 import com.acme.authorization.infrastructure.repository.UsersGroupRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component
-public class UsersGroupsImpl implements UsersGroups {
+public class UsersGroupsImpl implements IUsersGroups {
     private final UsersGroupRepository repository;
     private final UsersGroup.UsersGroupUsers usersGroupUsers;
     private final UsersGroup.UsersGroupHierarchies usersGroupHierarchies;
