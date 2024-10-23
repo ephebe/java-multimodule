@@ -1,6 +1,7 @@
 package com.acme.authorization;
 
 import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.operations.Operation;
 import com.acme.authorization.domain.users.IUsers;
 import com.acme.authorization.domain.users.User;
 import com.acme.authorization.domain.users_groups.IUsersGroups;

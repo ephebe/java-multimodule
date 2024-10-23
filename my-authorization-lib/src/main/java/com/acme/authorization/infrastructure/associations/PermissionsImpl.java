@@ -1,13 +1,13 @@
 package com.acme.authorization.infrastructure.associations;
 
-import com.acme.authorization.domain.Permission;
-import com.acme.authorization.domain.Permissions;
+import com.acme.authorization.domain.permissions.Permission;
+import com.acme.authorization.domain.permissions.IPermissions;
 import com.acme.authorization.domain.users.User;
 import com.acme.authorization.domain.users_groups.UsersGroup;
 
 import java.util.List;
 
-public class PermissionsImpl implements Permissions {
+public class PermissionsImpl implements IPermissions {
     @Override
     public List<Permission> findByUserOpersionName(User user, String operation) {
         return null;

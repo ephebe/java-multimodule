@@ -1,8 +1,11 @@
-package com.acme.authorization.domain;
+package com.acme.authorization.domain.permissions;
+
+import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.users_groups.UsersGroup;
 
 import java.util.List;
 
-public interface Permissions {
+public interface IPermissions {
     List<Permission> findByUserOpersionName(User user, String operation);
     List<Permission> findByUsersGroupOperationName(UsersGroup userGroup, String operation);
     List<Permission> findAll();

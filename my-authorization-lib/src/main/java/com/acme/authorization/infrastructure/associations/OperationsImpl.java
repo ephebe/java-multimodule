@@ -1,9 +1,9 @@
 package com.acme.authorization.infrastructure.associations;
 
-import com.acme.authorization.domain.Operation;
-import com.acme.authorization.domain.Operations;
+import com.acme.authorization.domain.operations.Operation;
+import com.acme.authorization.domain.operations.IOperations;
 
-public class OperationsImpl implements Operations {
+public class OperationsImpl implements IOperations {
     @Override
     public Operation getOperationByName(String name) {
         return null;

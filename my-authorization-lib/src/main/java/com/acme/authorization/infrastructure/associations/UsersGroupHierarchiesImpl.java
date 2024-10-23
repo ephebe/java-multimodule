@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component
-public class UsersGroupHierarchiesImpl implements UsersGroup.UsersGroupHierarchies {
+public class UsersGroupHierarchiesImpl implements UsersGroup.IUsersGroupHierarchies {
     private final UsersGroupHierarchyRepository repository;
 
     @Override

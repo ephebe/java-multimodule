@@ -1,7 +1,5 @@
-package com.acme.authorization.domain.users;
+package com.acme.authorization.domain;
 
-import com.acme.authorization.domain.permissions.Permission;
-import com.acme.authorization.domain.users_groups.UsersGroup;
 import com.acme.authorization.domain.entities.UserEntity;
 import lombok.RequiredArgsConstructor;
 

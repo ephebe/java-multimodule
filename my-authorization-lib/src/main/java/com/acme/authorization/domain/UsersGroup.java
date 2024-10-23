@@ -1,6 +1,7 @@
-package com.acme.authorization.domain.users_groups;
+package com.acme.authorization.domain;
 
-import com.acme.authorization.domain.users.User;
+import com.acme.authorization.domain.UsersGroups.IUsersGroups;
+import com.acme.authorization.domain.UsersGroups.UsersGroupsHierarchy;
 import com.acme.authorization.domain.entities.UsersGroupEntity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,11 +13,10 @@ import java.util.UUID;
 public class UsersGroup {
     @Getter
     private final UsersGroupEntity srcEntity;
-    private final IUsersGroupSelf usersGroupsSelf;
-    private final IUsersGroups usersGroups;
-    private final IUsersGroupUsers users;
-    private final IUsersGroupHierarchies hierarchies;
-    private final IUsersGroupPermissions permissions;
+    private final UsersGroupSelf usersGroupsSelf;
+    private final UsersGroupUsers users;
+    private final UsersGroupHierarchies hierarchies;
+    private final UsersGroupPermissions permissions;
 
     public UUID getId() {
         return srcEntity.getId();
@@ -61,10 +61,6 @@ public class UsersGroup {
         this.users.add(this,user);
     }
 
-    public UsersGroup getParent() {
-        return this.usersGroups.findUsersGroupById(this.srcEntity.getParentId());
-    }
-
     public List<UsersGroupsHierarchy> getDescendants() {
         return this.hierarchies.findDescendants(this.getId());
     }
@@ -81,27 +77,29 @@ public class UsersGroup {
         return this.users.findByUsersGroupId(this.getId());
     }
 
-    public interface IUsersGroupSelf {
+    public interface UsersGroupSelf {
         UsersGroup findUsersGroupByName(String usersGroupName);
         UsersGroup add(String usersGroupName);
     }
-    public interface IUsersGroupUsers {
+
+    public interface UsersGroupUsers {
         List<UsersGroupUser> findByUsersGroupId(UUID usersGroupId);
         void removeAll();
         void add(UsersGroup usersGroup,User user);
     }
 
-    public interface IUsersGroupHierarchies {
+    public interface UsersGroupHierarchies {
         Boolean exists(UUID ancestorId,UUID descendorId);
         List<UsersGroupsHierarchy> findDescendants(UUID ancestorId);
+        void addAncestorsOfUsersGroup(UUID parentUsersGroupId,UUID usersGroupId);
         void addHierarchy(UUID ancestorId,UUID usersGroupId);
-        void removeDescendant(UUID usersGroupId);
+        void removeDescendants(UUID ancestorId);
 
         List<UsersGroupsHierarchy> findAncestors(UUID descendorId);
-        void removeAncestor(UUID usersGroupId);
+        void removeAncestors(UUID descendantId);
     }
 
-    public interface IUsersGroupPermissions {
+    public interface UsersGroupPermissions {
         void deleteAll();
     }
 }

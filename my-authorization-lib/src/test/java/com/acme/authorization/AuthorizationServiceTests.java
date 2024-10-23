@@ -3,6 +3,7 @@ package com.acme.authorization;
 import com.acme.authorization.domain.*;
 import com.acme.authorization.domain.entities_groups.EntitiesGroup;
 import com.acme.authorization.domain.entities_groups.IEntitiesGroups;
+import com.acme.authorization.domain.permissions.Permission;
 import com.acme.authorization.domain.users.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

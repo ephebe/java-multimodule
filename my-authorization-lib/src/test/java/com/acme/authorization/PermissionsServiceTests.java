@@ -1,6 +1,8 @@
 package com.acme.authorization;
 
 import com.acme.authorization.domain.*;
+import com.acme.authorization.domain.permissions.IPermissions;
+import com.acme.authorization.domain.permissions.Permission;
 import com.acme.authorization.domain.users.User;
 import com.acme.authorization.domain.users_groups.IUsersGroups;
 import com.acme.authorization.domain.users_groups.UsersGroup;
@@ -15,7 +17,7 @@ public class PermissionsServiceTests {
 
     private IUsersGroups usersGroups;
 
-    private Permissions permissions;
+    private IPermissions permissions;
     private User user;
     private Feature feature;
 

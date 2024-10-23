@@ -15,9 +15,9 @@ import java.util.UUID;
 @Component
 public class UsersGroupsImpl implements IUsersGroups {
     private final UsersGroupRepository repository;
-    private final UsersGroup.UsersGroupUsers usersGroupUsers;
-    private final UsersGroup.UsersGroupHierarchies usersGroupHierarchies;
-    private final UsersGroup.UsersGroupPermissions usersGroupPermissions;
+    private final UsersGroup.IUsersGroupUsers usersGroupUsers;
+    private final UsersGroup.IUsersGroupHierarchies usersGroupHierarchies;
+    private final UsersGroup.IUsersGroupPermissions usersGroupPermissions;
 
     @Override
     public UsersGroup add(String usersGroupName) {

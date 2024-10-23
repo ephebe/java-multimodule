@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class UsersGroupPermissionsImpl implements UsersGroup.UsersGroupPermissions {
+public class UsersGroupPermissionsImpl implements UsersGroup.IUsersGroupPermissions {
     private final PermissionRepository repository;
     @Override
     public void deleteAll() {
